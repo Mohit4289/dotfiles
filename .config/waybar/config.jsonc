@@ -15,12 +15,12 @@
 
   "modules-right": [
     "pulseaudio",
+    "pulseaudio#source",
     "cpu",
     "memory",
     "backlight",
     "temperature",
     "power-profiles-daemon",
-    "network",
     "battery",
     "tray",
     "custom/power"
