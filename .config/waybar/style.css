@@ -146,6 +146,7 @@ window#waybar.hidden {
 
 /* Right Status Island: Audio, Battery, System, Power */
 #pulseaudio,
+#network,
 #cpu,
 #memory,
 #backlight,
@@ -169,6 +170,7 @@ window#waybar.hidden {
 }
 
 #pulseaudio:hover,
+#network:hover,
 #cpu:hover,
 #memory:hover,
 #backlight:hover,
@@ -215,4 +217,8 @@ tooltip {
 
 tooltip label {
   color: @fg-main;
+}
+
+#network.disconnected {
+  color: @accent-red;
 }
