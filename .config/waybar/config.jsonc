@@ -15,7 +15,7 @@
 
   "modules-right": [
     "pulseaudio",
-    "pulseaudio#source",
+    "custom/mic",
     "cpu",
     "memory",
     "backlight",
@@ -207,22 +207,17 @@
   },
 
   // ─────────────────────────────────────
-  // Audio
+  // Sound / Headphone Output (Sound Only)
   // ─────────────────────────────────────
 
   "pulseaudio": {
-    "format": "{icon}  {volume}%   {format_source}",
-
-    "format-bluetooth": "{icon}󰂯  {volume}%   {format_source}",
-    "format-bluetooth-muted": "{icon}   {format_source}",
-    "format-muted": "{icon}  {format_source}",
-
-    "format-source": "  {volume}%",
-    "format-source-muted": "",
-
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}󰂯  {volume}%",
+    "format-bluetooth-muted": "󰝟󰂯  muted",
+    "format-muted": "󰝟  muted",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
+      "hands-free": "",
       "headset": "",
       "phone": "",
       "portable": "",
@@ -233,20 +228,28 @@
         ""
       ]
     },
-
     "scroll-step": 5,
-
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-double-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
-    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
   },
 
   // ─────────────────────────────────────
-  // Power menu
+  // Microphone Input (Mic Only)
   // ─────────────────────────────────────
+
+  "custom/mic": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "/home/guts/.config/waybar/scripts/mic.sh",
+    "interval": 1,
+    "signal": 10,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+10 waybar",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5% && pkill -RTMIN+10 waybar",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5% && pkill -RTMIN+10 waybar"
+  },
 
   "custom/power": {
     "format": "⏻ ",

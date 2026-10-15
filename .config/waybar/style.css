@@ -146,7 +146,7 @@ window#waybar.hidden {
 
 /* Right Status Island: Audio, Battery, System, Power */
 #pulseaudio,
-#pulseaudio.source,
+#custom-mic,
 #cpu,
 #memory,
 #backlight,
@@ -170,7 +170,7 @@ window#waybar.hidden {
 }
 
 #pulseaudio:hover,
-#pulseaudio.source:hover,
+#custom-mic:hover,
 #cpu:hover,
 #memory:hover,
 #backlight:hover,
@@ -224,5 +224,9 @@ tooltip label {
 }
 
 #pulseaudio.source.source-muted {
+  color: @accent-red;
+}
+
+#custom-mic.muted {
   color: @accent-red;
 }
