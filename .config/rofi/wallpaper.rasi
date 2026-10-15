@@ -1,0 +1,115 @@
+/* ===================================================
+   Rofi - Minimalist Charcoal Wallpaper Picker Theme
+   =================================================== */
+
+* {
+    font: "Inter 11";
+    background-color: transparent;
+    text-color: #d8dbe0;
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 960px;
+    height: 620px;
+    border-radius: 18px;
+    background-color: #1e2025f4;
+    border: 1px;
+    border-color: #ffffff15;
+    cursor: "default";
+}
+
+mainbox {
+    enabled: true;
+    spacing: 16px;
+    padding: 22px;
+    orientation: vertical;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled: true;
+    spacing: 12px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background-color: #282b32d8;
+    border: 1px;
+    border-color: #ffffff10;
+    orientation: horizontal;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled: true;
+    padding: 0px 6px 0px 0px;
+    text-color: #d8dbe0;
+    font: "Inter Medium 11";
+}
+
+entry {
+    enabled: true;
+    text-color: #ffffff;
+    cursor: text;
+    placeholder: "Search charcoal wallpapers...";
+    placeholder-color: #727785;
+    font: "Inter 11";
+}
+
+listview {
+    enabled: true;
+    columns: 3;
+    lines: 2;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 14px;
+    padding: 2px;
+}
+
+element {
+    enabled: true;
+    orientation: vertical;
+    spacing: 8px;
+    padding: 12px;
+    border-radius: 14px;
+    background-color: #24272ec8;
+    border: 1px;
+    border-color: #ffffff0a;
+    cursor: pointer;
+}
+
+element selected.normal {
+    background-color: #343842;
+    border: 1px;
+    border-color: #ffffff;
+    text-color: #ffffff;
+}
+
+element-icon {
+    enabled: true;
+    background-color: transparent;
+    size: 136px;
+    cursor: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element-text {
+    enabled: true;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    font: "Inter 10";
+}
