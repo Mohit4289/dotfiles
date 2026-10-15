@@ -1,0 +1,109 @@
+/* ===================================================
+   wlogout - Slate Minimalist Dark Theme
+   =================================================== */
+
+* {
+  background-image: none;
+  box-shadow: none;
+  font-family: "Inter", "JetBrainsMono Nerd Font", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+window {
+  /* Rich dark atmospheric backdrop */
+  background: radial-gradient(circle at center, rgba(18, 20, 24, 0.88) 0%, rgba(10, 11, 14, 0.96) 100%);
+}
+
+button {
+  color: #c5c8d0;
+  background-color: rgba(30, 33, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center 32%;
+  background-size: 56px;
+  margin: 10px;
+  padding-top: 88px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Hover State: Elevated Slate Card with Subtle White Glow */
+button:focus,
+button:active,
+button:hover {
+  background-color: rgba(45, 49, 58, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+/* Specific Action Accents */
+#reboot:hover,
+#reboot:focus {
+  background-color: rgba(45, 49, 58, 0.95);
+  border: 1px solid #e5c07b;
+  color: #e5c07b;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(229, 192, 123, 0.25);
+}
+
+#shutdown:hover,
+#shutdown:focus {
+  background-color: rgba(45, 49, 58, 0.95);
+  border: 1px solid #e06c75;
+  color: #e06c75;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(224, 108, 117, 0.3);
+}
+
+/* Normal Icons */
+#lock {
+  background-image: image(url("icons/lock.svg"), url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("icons/logout.svg"), url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("icons/suspend.svg"), url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("icons/hibernate.svg"), url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#reboot {
+  background-image: image(url("icons/reboot.svg"), url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+#shutdown {
+  background-image: image(url("icons/shutdown.svg"), url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+/* Hover Icons */
+#lock:hover, #lock:focus {
+  background-image: image(url("icons/lock-hover.svg"), url("icons/lock.svg"));
+}
+
+#logout:hover, #logout:focus {
+  background-image: image(url("icons/logout-hover.svg"), url("icons/logout.svg"));
+}
+
+#suspend:hover, #suspend:focus {
+  background-image: image(url("icons/suspend-hover.svg"), url("icons/suspend.svg"));
+}
+
+#hibernate:hover, #hibernate:focus {
+  background-image: image(url("icons/hibernate-hover.svg"), url("icons/hibernate.svg"));
+}
+
+#reboot:hover, #reboot:focus {
+  background-image: image(url("icons/reboot-hover.svg"), url("icons/reboot.svg"));
+}
+
+#shutdown:hover, #shutdown:focus {
+  background-image: image(url("icons/shutdown-hover.svg"), url("icons/shutdown.svg"));
+}

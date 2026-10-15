@@ -1,0 +1,203 @@
+/* ===================================================
+   Graphite Theme (by vinceliuice) - Matching Screenshot
+   =================================================== */
+
+@define-color accent_color #ffffff;
+@define-color accent_bg_color #242428;
+@define-color accent_fg_color #ffffff;
+
+@define-color window_bg_color #202226;
+@define-color window_fg_color #d2d5da;
+
+@define-color view_bg_color #202226;
+@define-color view_fg_color #d2d5da;
+
+@define-color headerbar_bg_color #24262b;
+@define-color headerbar_fg_color #d2d5da;
+@define-color headerbar_border_color #303339;
+@define-color headerbar_backdrop_color #202226;
+
+@define-color card_bg_color #282a30;
+@define-color card_fg_color #d2d5da;
+@define-color card_border_color #34373e;
+
+@define-color popover_bg_color #24262b;
+@define-color popover_fg_color #d2d5da;
+
+/* Ultra-Curved Window Frames */
+window,
+window.background,
+window.csd,
+window.solid-csd,
+decoration,
+.window-frame {
+  border-radius: 18px;
+}
+
+headerbar,
+.titlebar {
+  border-radius: 18px 18px 0 0;
+  background-color: #24262b;
+  color: #d2d5da;
+  border-bottom: 1px solid #303339;
+}
+
+/* ===================================================
+   Distinctive Light Floating Sidebar (Graphite Signature)
+   =================================================== */
+.sidebar,
+placessidebar,
+scrolledwindow.sidebar {
+  background-color: #f6f8fa;
+  color: #1e2024;
+  border-radius: 18px 0 0 18px;
+  border-right: 1px solid #e1e4e8;
+}
+
+/* Sidebar rows */
+.sidebar row,
+placessidebar row {
+  border-radius: 10px;
+  margin: 3px 6px;
+  padding: 6px 12px;
+  color: #24272c;
+  font-weight: 500;
+  transition: all 150ms ease;
+}
+
+.sidebar row label,
+placessidebar row label {
+  color: #24272c;
+}
+
+.sidebar row image,
+placessidebar row image {
+  color: #24272c;
+}
+
+/* Hover on sidebar item */
+.sidebar row:hover:not(:selected),
+placessidebar row:hover:not(:selected) {
+  background-color: #e8ecf0;
+  color: #000000;
+}
+
+/* Active / Selected Sidebar Pill (Black Pill with White Text) */
+.sidebar row:selected,
+placessidebar row:selected {
+  background-color: #242428;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar row:selected label,
+placessidebar row:selected label,
+.sidebar row:selected image,
+placessidebar row:selected image {
+  color: #ffffff;
+}
+
+/* Main View (Charcoal) */
+.view,
+iconview,
+treeview {
+  background-color: #202226;
+  color: #d2d5da;
+}
+
+/* Rounded Buttons */
+button {
+  border-radius: 10px;
+  background-color: #2a2d33;
+  color: #d2d5da;
+  border: 1px solid #363940;
+  padding: 5px 12px;
+  transition: all 150ms ease;
+}
+
+button:hover {
+  background-color: #383b42;
+  color: #ffffff;
+}
+
+button:active,
+button:checked {
+  background-color: #ffffff;
+  color: #1c1e22;
+  border-color: #ffffff;
+}
+
+/* Pill Switchers (About / Credits from screenshot) */
+stackswitcher button:checked {
+  background-color: #ffffff;
+  color: #1c1e22;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+stackswitcher button {
+  border-radius: 20px;
+}
+
+/* Rounded Inputs & Search bars */
+entry,
+searchbar,
+searchbar entry {
+  border-radius: 10px;
+  background-color: #1a1c20;
+  color: #d2d5da;
+  border: 1px solid #363940;
+}
+
+entry:focus {
+  border-color: #ffffff;
+}
+
+/* Rounded Tabs */
+notebook {
+  background-color: #202226;
+}
+
+notebook header {
+  background-color: #202226;
+  border-bottom: 1px solid #303339;
+  padding: 4px 6px 0 6px;
+}
+
+notebook tab {
+  border-radius: 10px 10px 0 0;
+  background-color: #18191c;
+  color: #777b83;
+  padding: 6px 14px;
+  margin: 0 3px;
+  border: 1px solid #303339;
+  border-bottom: none;
+  font-weight: 500;
+  transition: all 150ms ease;
+}
+
+notebook tab:checked,
+notebook tab:active {
+  background-color: #2c2f35;
+  color: #ffffff;
+  border-color: #3e424a;
+  border-bottom: 1px solid #2c2f35;
+  border-radius: 10px 10px 0 0;
+  font-weight: 600;
+}
+
+notebook tab:hover:not(:checked) {
+  background-color: #24262b;
+  color: #ffffff;
+}
+
+/* Rounded Popovers & Menus */
+popover,
+popover.background,
+menu,
+.menu {
+  border-radius: 14px;
+  background-color: #24262b;
+  border: 1px solid #363940;
+}

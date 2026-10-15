@@ -1,0 +1,269 @@
+// -*- mode: jsonc -*-
+{
+  "height": 42,
+  "spacing": 6,
+
+  "modules-left": [
+    "custom/launcher",
+    "sway/workspaces",
+    "idle_inhibitor"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "backlight",
+    "temperature",
+    "power-profiles-daemon",
+    "battery",
+    "tray",
+    "custom/power"
+  ],
+
+  // ─────────────────────────────────────
+  // Workspaces
+  // ─────────────────────────────────────
+
+  "sway/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "disable-scroll": true
+  },
+
+  // ─────────────────────────────────────
+  // Idle inhibitor
+  // ─────────────────────────────────────
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip-format-activated": "Idle inhibitor: ON",
+    "tooltip-format-deactivated": "Idle inhibitor: OFF"
+  },
+
+  // ─────────────────────────────────────
+  // System tray
+  // ─────────────────────────────────────
+
+  "tray": {
+    "spacing": 10
+  },
+
+  // ─────────────────────────────────────
+  // Clock
+  // ─────────────────────────────────────
+
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  // ─────────────────────────────────────
+  // CPU
+  // ─────────────────────────────────────
+
+  "cpu": {
+    "interval": 5,
+    "format": "  {usage}%",
+    "tooltip": true,
+    "tooltip-format": "CPU Usage: {usage}%",
+    "on-click": "kitty -e btop"
+  },
+
+  // ─────────────────────────────────────
+  // Memory
+  // ─────────────────────────────────────
+
+  "memory": {
+    "interval": 5,
+    "format": "  {}%",
+    "tooltip": true,
+    "tooltip-format": "Memory Usage: {}%",
+    "on-click": "kitty -e btop"
+  },
+
+  // ─────────────────────────────────────
+  // Temperature
+  // ─────────────────────────────────────
+
+  "temperature": {
+    "interval": 5,
+    "critical-threshold": 80,
+    "format": "{icon}  {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true
+  },
+
+  // ─────────────────────────────────────
+  // Brightness
+  // ─────────────────────────────────────
+
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "tooltip-format": "Brightness: {percent}%"
+  },
+
+  // ─────────────────────────────────────
+  // Battery
+  // ─────────────────────────────────────
+
+ "battery": {
+   "states": {
+     "warning": 50,
+     "critical": 35
+   },
+   "format": "{icon}  {capacity}%",
+   "format-full": "{icon}  {capacity}%",
+   "format-charging": "{icon}  {capacity}%",
+   "format-plugged": "{icon}  {capacity}%",
+   "format-alt": "{icon}  {time}",
+   "format-icons": [
+     "󰁺",
+     "󰁻",
+     "󰁼",
+     "󰁼",
+     "󰁽",
+     "󰁾",
+     "󰁿",
+     "󰂀",
+     "󰂁",
+     "󰂂",
+     "󰁹"
+   ]
+   },
+
+  // ─────────────────────────────────────
+  // Power profile
+  // ─────────────────────────────────────
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  // ─────────────────────────────────────
+  // Network
+  // ─────────────────────────────────────
+
+  "network": {
+    "interval": 5,
+
+    "format-wifi": "{icon}  {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+    "format-linked": "󰈀  {ifname}",
+    "format-disconnected": "󰤭",
+
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+
+    "tooltip": true,
+
+    "tooltip-format": "  Interface  :  {ifname}\n\n󱂇  Gateway    :  {gwaddr}\n\n󰓅  Bandwidth  :  ▼{bandwidthDownBytes} |  ▲{bandwidthUpBytes}",
+
+    "on-click": "nm-connection-editor"
+  },
+
+  // ─────────────────────────────────────
+  // Audio
+  // ─────────────────────────────────────
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%   {format_source}",
+
+    "format-bluetooth": "{icon}󰂯  {volume}%   {format_source}",
+    "format-bluetooth-muted": "{icon}   {format_source}",
+    "format-muted": "{icon}  {format_source}",
+
+    "format-source": "  {volume}%",
+    "format-source-muted": "",
+
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+
+    "scroll-step": 5,
+
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+
+  // ─────────────────────────────────────
+  // Power menu
+  // ─────────────────────────────────────
+
+  "custom/power": {
+    "format": "⏻ ",
+    "on-click": "wlogout -b 6 -c 16 -r 16 -T 430 -B 430 -L 260 -R 260",
+    "tooltip": false
+  },
+
+  // ─────────────────────────────────────
+  // Arch launcher
+  // ─────────────────────────────────────
+
+  "custom/launcher": {
+    "format": "    ",
+    "on-click": "fuzzel",
+    "tooltip": false
+  },
+
+  // ─────────────────────────────────────
+  // Waybar signals
+  // ─────────────────────────────────────
+
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show"
+}

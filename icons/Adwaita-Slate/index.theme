@@ -1,0 +1,19 @@
+[Icon Theme]
+Name=Adwaita-Slate
+Comment=Adwaita icon theme with Slate Accent Folders matching mockup
+Inherits=Adwaita,Papirus-Dark,hicolor
+Directories=scalable/places,scalable/status
+
+[scalable/places]
+Context=Places
+Size=128
+MinSize=16
+MaxSize=512
+Type=Scalable
+
+[scalable/status]
+Context=Status
+Size=128
+MinSize=16
+MaxSize=512
+Type=Scalable

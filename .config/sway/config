@@ -1,0 +1,262 @@
+exec_always uwsm finalize SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+
+xwayland force
+
+exec uwsm finalize
+
+### Variables
+
+set $mod Mod4
+set $term kitty
+set $menu fuzzel
+set $browser zen-browser
+set $fm thunar
+
+font pango:Inter, JetBrainsMono Nerd Font 10
+
+### Input
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+}
+
+input type:keyboard {
+    xkb_layout us
+}
+
+focus_follows_mouse yes
+
+focus_on_window_activation smart
+
+workspace_auto_back_and_forth yes
+
+mouse_warping none
+
+### Gaps & SwayFX Rounded Corners
+gaps inner 5
+gaps outer 6
+
+corner_radius 16
+smart_corner_radius on
+shadows enable
+shadow_blur_radius 14
+shadow_color #00000066
+
+default_border pixel 1
+
+
+### Wallpaper
+
+output * bg ~/Pictures/Wallpapers/wallpaper.png fill
+
+### Startup
+
+exec --no-startup-id pgrep -x kanshi >/dev/null || kanshi -c ~/.config/kanshi/config
+exec --no-startup-id pgrep -x waybar >/dev/null || waybar
+exec --no-startup-id pgrep -x swaync >/dev/null || swaync
+exec --no-startup-id pgrep -x copyq >/dev/null || copyq
+exec --no-startup-id pgrep -x flameshot >/dev/null || flameshot
+exec --no-startup-id pgrep -x wlsunset >/dev/null || wlsunset -l 29.389789 -L 79.456436 -t 3500 -T 6500
+
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme "Adwaita-Slate"
+exec --no-startup-id gsettings set org.gnome.desktop.interface accent-color "slate"
+exec --no-startup-id gsettings set org.gnome.desktop.interface font-name "Inter 11"
+
+exec_always --no-startup-id swaybg -i ~/Pictures/Wallpapers/wallpaper.png -m fill
+
+exec --no-startup-id pgrep -x swayidle >/dev/null || swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 330 'swaymsg "output * dpms off"' \
+               resume 'swaymsg "output * dpms on"' \
+    timeout 600 'systemctl suspend' \
+    before-sleep 'swaylock -f' \
+    after-resume 'swaymsg "output * dpms on"'
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+### Reload
+
+bindsym $mod+Shift+c reload
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id autotiling
+
+### Terminal
+
+bindsym $mod+t exec $term
+
+### Launcher
+
+bindsym $mod+d exec $menu
+
+### Browser
+
+bindsym $mod+b exec $browser
+
+### File manager
+
+bindsym $mod+e exec $fm
+
+### Lock
+
+bindsym $mod+x exec swaylock
+
+### Exit
+
+bindsym $mod+Shift+x exec wlogout -b 6 -c 16 -r 16 -T 400 -B 400 -L 240 -R 240
+
+### Close
+
+bindsym $mod+Shift+q kill
+
+### Fullscreen
+
+bindsym $mod+f fullscreen toggle
+
+### Floating
+
+bindsym $mod+Shift+f floating toggle
+
+### Screenshots
+
+bindsym $mod+p exec grim -g "$(slurp)" - | tee /mnt/ramdisk/$(date +%F-%T).png | wl-copy
+bindsym $mod+Shift+p exec flameshot gui
+
+### Notifications
+
+bindsym $mod+n exec swaync-client -t
+bindsym $mod+Shift+n exec swaync-client -d
+
+### Clipboard
+
+bindsym $mod+v exec copyq toggle
+
+### Wallpaper
+
+bindsym $mod+w exec ~/.config/sway/scripts/wallpicker.sh
+bindsym $mod+Shift+w exec ~/.config/sway/scripts/randomwall.sh
+
+### Focus
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+### Move windows
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+### Workspaces
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+### Mouse
+
+floating_modifier $mod normal
+tiling_drag enable
+
+### Media
+
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+### Brightness
+
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+### Waybar Toggle
+bindsym $mod+l exec ~/.config/sway/scripts/toggle_waybar.sh
+
+### KCalc
+bindsym $mod+equal exec kcalc
+
+### Floating windows
+
+for_window [app_id="com.github.hluk.copyq"] floating enable
+for_window [app_id="flameshot"] floating enable
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="mpv"] floating enable
+for_window [app_id="imv"] floating enable
+for_window [app_id="ddcui"] floating enable
+for_window [app_id="kcalc"] floating enable, resize set 600 600
+for_window [window_role="pop-up"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [app_id="zen" title="Picture-in-Picture"] floating enable, sticky enable, resize set 350 175
+for_window [app_id="Thunar" title="(?i).*(confirm|delete|rename).*"] floating enable
+
+### Colors (Slate / Charcoal Dark Theme)
+client.focused          #484e5c #24262b #ffffff #484e5c #484e5c
+client.focused_inactive #303339 #202226 #888888 #303339 #303339
+client.unfocused        #1c1e22 #202226 #666a72 #1c1e22 #1c1e22
+client.urgent           #e06c75 #24262b #ffffff #e06c75 #e06c75
+
+### Window Resize
+mode "resize" {
+    bindsym Left resize shrink width 10px
+    bindsym Right resize grow width 10px
+    bindsym Up resize shrink height 10px
+    bindsym Down resize grow height 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+### Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+### Move windows between screens
+bindsym $mod+Shift+comma move workspace to output left
+bindsym $mod+Shift+period move workspace to output right
+
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
+
+### Idle inhibit toggle
+bindsym $mod+i inhibit_idle toggle
+
+### Adaptive Sync for display
+output * adaptive_sync on
+
+### Workspace swipe
+bindgesture swipe:3:left workspace next
+bindgesture swipe:3:right workspace prev

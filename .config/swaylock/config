@@ -1,0 +1,42 @@
+# Swaylock Config - Working, Visible, and Styled
+
+image=/home/guts/Pictures/Wallpapers/wallpaper.png
+scaling=fill
+effect-blur=7x5
+
+# Clock Display
+clock
+timestr=%I:%M %p
+datestr=%A, %B %d
+font=Inter
+
+# Indicator
+indicator
+indicator-radius=100
+indicator-thickness=8
+
+# Base Colors (Visible Dark Glass with Clean Outline)
+inside-color=1e2024cc
+ring-color=d2d5daff
+text-color=ffffffff
+line-color=00000000
+separator-color=00000000
+
+# Typing & Backspace Feedback
+key-hl-color=6f8396ff
+bs-hl-color=e06c75ff
+
+# Verification / Correct Password (Green)
+ring-ver-color=4caf50ff
+inside-ver-color=1e2024cc
+text-ver-color=4caf50ff
+
+# Wrong Password (Red)
+ring-wrong-color=e53935ff
+inside-wrong-color=1e2024cc
+text-wrong-color=e53935ff
+
+# Cleared (Yellow)
+ring-clear-color=e5c07bff
+inside-clear-color=1e2024cc
+text-clear-color=e5c07bff
