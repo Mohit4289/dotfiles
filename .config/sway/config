@@ -55,6 +55,7 @@ output * bg ~/Pictures/Wallpapers/wallpaper.png fill
 
 exec --no-startup-id pgrep -x kanshi >/dev/null || kanshi -c ~/.config/kanshi/config
 exec --no-startup-id pgrep -x waybar >/dev/null || waybar
+exec_always --no-startup-id pgrep -x nwg-dock >/dev/null || nwg-dock -p bottom -i 42 -mb 6 -c "fuzzel" -lp "start" -nows -x
 exec --no-startup-id pgrep -x swaync >/dev/null || swaync
 exec --no-startup-id pgrep -x copyq >/dev/null || copyq
 exec --no-startup-id pgrep -x flameshot >/dev/null || flameshot
