@@ -35,14 +35,31 @@ workspace_auto_back_and_forth yes
 mouse_warping none
 
 ### Gaps & SwayFX Rounded Corners
-gaps inner 5
-gaps outer 6
+gaps inner 6
+gaps outer 8
 
+### SwayFX Glassmorphism & Effects
 corner_radius 16
 smart_corner_radius on
+
+blur enable
+blur_xray disable
+blur_passes 3
+blur_radius 7
+blur_noise 0.02
+blur_brightness 0.95
+blur_contrast 0.95
+blur_saturation 1.1
+
 shadows enable
-shadow_blur_radius 14
-shadow_color #00000066
+shadow_blur_radius 22
+shadow_color #00000088
+
+layer_effects "waybar" blur enable; shadows enable; corner_radius 16
+layer_effects "fuzzel" blur enable; shadows enable; corner_radius 18
+layer_effects "rofi" blur enable; shadows enable; corner_radius 18
+layer_effects "swaync-control-center" blur enable; shadows enable; corner_radius 16
+layer_effects "wlogout" blur enable
 
 default_border pixel 1
 
