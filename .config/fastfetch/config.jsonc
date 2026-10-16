@@ -1,15 +1,15 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "file",
-    "source": "/home/guts/.config/fastfetch/berserk_brand.txt",
+    "type": "kitty-direct",
+    "source": "/home/guts/.config/fastfetch/berserk_brand_clean.png",
+    "width": 18,
+    "height": 13,
+    "preserveAspectRatio": true,
     "padding": {
       "top": 0,
-      "left": 2,
+      "left": 1,
       "right": 3
-    },
-    "color": {
-      "1": "red"
     }
   },
   "display": {
