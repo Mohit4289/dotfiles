@@ -23,7 +23,7 @@ echo -e "${NC}"
 
 # 1. Dependency Check
 echo -e "${BLUE}[*] Checking recommended packages...${NC}"
-RECOMMENDED_PKGS=("sway" "waybar" "kitty" "fuzzel" "rofi" "swaylock" "swaync" "wlogout" "nwg-dock" "swaybg" "grim" "slurp" "wl-clipboard" "magick")
+RECOMMENDED_PKGS=("sway" "waybar" "kitty" "fuzzel" "rofi" "swaylock" "swaync" "wlogout" "swaybg" "grim" "slurp" "wl-clipboard" "magick")
 MISSING_PKGS=()
 
 for pkg in "${RECOMMENDED_PKGS[@]}"; do
@@ -36,14 +36,14 @@ if [ ${#MISSING_PKGS[@]} -gt 0 ]; then
     echo -e "${YELLOW}[!] Note: The following packages were not found in your PATH:${NC}"
     echo "    ${MISSING_PKGS[*]}"
     echo -e "${YELLOW}    On Arch Linux, you can install them with:${NC}"
-    echo "    sudo pacman -S swayfx waybar kitty fuzzel rofi swaylock-effects swaync wlogout nwg-dock swaybg grim slurp wl-clipboard imagemagick"
+    echo "    sudo pacman -S swayfx waybar kitty fuzzel rofi swaylock-effects swaync wlogout swaybg grim slurp wl-clipboard imagemagick"
     echo ""
 fi
 
 # 2. Backup existing configs
 echo -e "${BLUE}[*] Backing up existing configurations to: ${BACKUP_DIR}${NC}"
 mkdir -p "$BACKUP_DIR"
-for item in sway waybar kitty fuzzel rofi swaylock swaync wlogout nwg-dock gtk-3.0 gtk-4.0 fastfetch btop; do
+for item in sway waybar kitty fuzzel rofi swaylock swaync wlogout gtk-3.0 gtk-4.0 fastfetch btop; do
     if [ -e "$HOME/.config/$item" ]; then
         cp -r "$HOME/.config/$item" "$BACKUP_DIR/"
     fi
