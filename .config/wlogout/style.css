@@ -10,13 +10,13 @@
 
 window {
   /* Cinematic Pure Black Backdrop */
-  background: radial-gradient(circle at center, rgba(8, 8, 10, 0.94) 0%, rgba(0, 0, 0, 0.98) 100%);
+  background: radial-gradient(circle at center, rgba(8, 8, 10, 0.65) 0%, rgba(0, 0, 0, 0.82) 100%);
 }
 
 button {
   color: #e6e8ec;
-  background-color: rgba(12, 12, 15, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(14, 15, 20, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 20px;
   background-repeat: no-repeat;
   background-position: center 32%;

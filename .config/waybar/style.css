@@ -1,12 +1,12 @@
 /* ===================================================
    Ultra-Clean Floating Stadium Pill Waybar Theme
-   (Numbered Workspaces, Date+Time & Charging Indicator)
+   (Frosted Glassmorphism with SwayFX Blur)
    =================================================== */
 
-@define-color bg-pill        rgba(14, 15, 18, 0.95);
-@define-color bg-pill-hover  rgba(28, 30, 36, 0.98);
-@define-color border-pill    rgba(255, 255, 255, 0.08);
-@define-color border-hover   rgba(255, 255, 255, 0.22);
+@define-color bg-pill        rgba(12, 13, 16, 0.68);
+@define-color bg-pill-hover  rgba(30, 32, 40, 0.85);
+@define-color border-pill    rgba(255, 255, 255, 0.12);
+@define-color border-hover   rgba(255, 255, 255, 0.28);
 @define-color text-main      #ffffff;
 @define-color text-muted     #8b909a;
 @define-color accent-green   #98c379;
@@ -45,6 +45,7 @@ window#waybar.hidden {
   margin: 5px 3px 5px 8px;
   padding: 0 14px;
   min-width: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: all 180ms ease;
 }
 
@@ -65,6 +66,7 @@ window#waybar.hidden {
   margin: 5px 3px;
   padding: 0 10px;
   min-width: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: all 180ms ease;
 }
 
@@ -76,7 +78,7 @@ window#waybar.hidden {
 }
 
 /* ===================================================
-   Center Group: Date, Time & Numbered Workspaces
+   Center Group: Date & Time
    =================================================== */
 
 #clock {
@@ -88,6 +90,7 @@ window#waybar.hidden {
   color: #ffffff;
   font-weight: 700;
   font-size: 11.5px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: all 180ms ease;
 }
 
@@ -103,6 +106,7 @@ window#waybar.hidden {
   border-radius: 9999px;
   margin: 5px 4px;
   padding: 2px 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 #workspaces button {
@@ -129,7 +133,7 @@ window#waybar.hidden {
   background: #ffffff;
   color: #000000;
   min-width: 24px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 #workspaces button.urgent {
@@ -156,6 +160,7 @@ window#waybar.hidden {
   margin: 5px 3px;
   padding: 3px 12px;
   color: @text-main;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: all 180ms ease;
 }
 
@@ -175,7 +180,7 @@ window#waybar.hidden {
 /* Audio mute states */
 #pulseaudio.muted {
   color: @text-muted;
-  background-color: rgba(20, 21, 26, 0.94);
+  background-color: rgba(18, 19, 24, 0.75);
 }
 
 #temperature.critical {

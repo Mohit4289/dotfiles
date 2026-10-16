@@ -19,9 +19,9 @@ window {
     width: 960px;
     height: 620px;
     border-radius: 18px;
-    background-color: #08090bf6;
+    background-color: #0c0d10b8;
     border: 1px;
-    border-color: #ffffff15;
+    border-color: #ffffff20;
     cursor: "default";
 }
 
