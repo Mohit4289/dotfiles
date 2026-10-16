@@ -239,6 +239,13 @@ for_window [app_id="zen" title="Picture-in-Picture"] floating enable, sticky ena
 ### Glassmorphic Window Opacity (Frosted glass everywhere, Solid in IDE)
 for_window [app_id=".*"] opacity 0.88
 for_window [class=".*"] opacity 0.88
+
+# Tailored app opacity
+for_window [app_id="vesktop"] opacity 0.94
+for_window [app_id="(?i)thunar"] opacity 0.94
+for_window [class="(?i)thunar"] opacity 0.94
+
+# Protected Solid (100% Opacity)
 for_window [app_id="antigravity-ide"] opacity 1.0
 for_window [class="(?i)antigravity.*"] opacity 1.0
 for_window [app_id="vscodium-electron"] opacity 1.0
