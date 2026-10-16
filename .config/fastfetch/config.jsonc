@@ -1,22 +1,22 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "arch_small",
+    "type": "file",
+    "source": "/home/guts/.config/fastfetch/berserk_brand.txt",
     "padding": {
-      "top": 1,
+      "top": 0,
       "left": 2,
       "right": 3
     },
     "color": {
-      "1": "blue",
-      "2": "cyan"
+      "1": "red"
     }
   },
   "display": {
     "separator": "  ➜  ",
     "color": {
-      "keys": "blue",
-      "title": "cyan"
+      "keys": "red",
+      "title": "bright_red"
     }
   },
   "modules": [
