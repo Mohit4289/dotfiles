@@ -31,20 +31,10 @@
   // ─────────────────────────────────────
 
   "sway/workspaces": {
-    "format": "",
+    "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
-    "disable-scroll": true,
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": []
-    }
+    "disable-scroll": true
   },
 
   // ─────────────────────────────────────
@@ -74,7 +64,7 @@
   // ─────────────────────────────────────
 
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "{:%a %d %b  %I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
@@ -152,8 +142,8 @@
    },
    "format": "{icon}  {capacity}%",
    "format-full": "{icon}  {capacity}%",
-   "format-charging": "{icon}  {capacity}%",
-   "format-plugged": "{icon}  {capacity}%",
+   "format-charging": "󱐋 {icon} {capacity}%",
+   "format-plugged": " {icon} {capacity}%",
    "format-alt": "{icon}  {time}",
    "format-icons": [
      "󰁺",

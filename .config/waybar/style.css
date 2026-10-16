@@ -1,6 +1,6 @@
 /* ===================================================
    Ultra-Clean Floating Stadium Pill Waybar Theme
-   (Matched to Reference Design)
+   (Numbered Workspaces, Date+Time & Charging Indicator)
    =================================================== */
 
 @define-color bg-pill        rgba(14, 15, 18, 0.95);
@@ -9,6 +9,7 @@
 @define-color border-hover   rgba(255, 255, 255, 0.22);
 @define-color text-main      #ffffff;
 @define-color text-muted     #8b909a;
+@define-color accent-green   #98c379;
 @define-color accent-red     #e06c75;
 @define-color accent-yellow  #e5c07b;
 
@@ -75,7 +76,7 @@ window#waybar.hidden {
 }
 
 /* ===================================================
-   Center Group: Time & Dynamic Island Workspaces
+   Center Group: Date, Time & Numbered Workspaces
    =================================================== */
 
 #clock {
@@ -95,45 +96,45 @@ window#waybar.hidden {
   border-color: @border-hover;
 }
 
-/* Workspaces: Dynamic Island Capsule */
+/* Workspaces: Numbered Capsule Pills */
 #workspaces {
   background-color: @bg-pill;
   border: 1px solid @border-pill;
   border-radius: 9999px;
   margin: 5px 4px;
-  padding: 2px 8px;
+  padding: 2px 4px;
 }
 
 #workspaces button {
-  font-size: 0px;
-  min-width: 8px;
-  min-height: 8px;
-  padding: 0;
-  margin: 5px 3.5px;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 18px;
+  min-height: 18px;
+  padding: 0 7px;
+  margin: 2px 2px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: @text-muted;
   border: none;
   box-shadow: none;
-  transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 #workspaces button.focused {
   background: #ffffff;
-  min-width: 28px;
-  min-height: 8px;
-  border-radius: 9999px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  color: #000000;
+  min-width: 24px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 #workspaces button.urgent {
   background: @accent-red;
-  min-width: 14px;
-  min-height: 8px;
-  border-radius: 9999px;
+  color: #ffffff;
 }
 
 /* ===================================================
@@ -171,7 +172,7 @@ window#waybar.hidden {
   border-color: @border-hover;
 }
 
-/* Muted audio pill states */
+/* Audio mute states */
 #pulseaudio.muted {
   color: @text-muted;
   background-color: rgba(20, 21, 26, 0.94);
@@ -179,6 +180,13 @@ window#waybar.hidden {
 
 #temperature.critical {
   color: @accent-red;
+}
+
+/* Battery Charging & States */
+#battery.charging,
+#battery.plugged {
+  color: @accent-green;
+  border-color: rgba(152, 195, 121, 0.35);
 }
 
 #battery.warning {
