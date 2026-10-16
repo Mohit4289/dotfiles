@@ -236,6 +236,7 @@ for_window [app_id="kcalc"] floating enable, resize set 600 600
 for_window [window_role="pop-up"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [app_id="zen" title="Picture-in-Picture"] floating enable, sticky enable, resize set 350 175
+for_window [app_id="zen"] opacity 0.88
 for_window [app_id="Thunar" title="(?i).*(confirm|delete|rename).*"] floating enable
 
 ### Colors (Slate / Charcoal Dark Theme)
