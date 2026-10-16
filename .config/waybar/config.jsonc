@@ -1,16 +1,16 @@
 // -*- mode: jsonc -*-
 {
-  "height": 42,
+  "height": 38,
   "spacing": 6,
 
   "modules-left": [
     "custom/launcher",
-    "sway/workspaces",
     "idle_inhibitor"
   ],
 
   "modules-center": [
-    "clock"
+    "clock",
+    "sway/workspaces"
   ],
 
   "modules-right": [
@@ -31,10 +31,20 @@
   // ─────────────────────────────────────
 
   "sway/workspaces": {
-    "format": "{name}",
+    "format": "",
     "on-click": "activate",
     "all-outputs": true,
-    "disable-scroll": true
+    "disable-scroll": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": []
+    }
   },
 
   // ─────────────────────────────────────
@@ -64,7 +74,7 @@
   // ─────────────────────────────────────
 
   "clock": {
-    "format": "{:%a %d %b %H:%M}",
+    "format": "{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
