@@ -55,6 +55,7 @@ shadows enable
 shadow_blur_radius 22
 shadow_color #00000088
 
+layer_effects "waybar" shadows disable; blur disable
 layer_effects "fuzzel" blur enable; shadows enable; corner_radius 18
 layer_effects "rofi" blur enable; shadows enable; corner_radius 18
 layer_effects "swaync-control-center" blur enable; shadows enable; corner_radius 16
