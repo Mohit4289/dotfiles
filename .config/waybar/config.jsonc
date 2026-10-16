@@ -5,12 +5,12 @@
 
   "modules-left": [
     "custom/launcher",
+    "sway/workspaces",
     "idle_inhibitor"
   ],
 
   "modules-center": [
-    "clock",
-    "sway/workspaces"
+    "clock"
   ],
 
   "modules-right": [
