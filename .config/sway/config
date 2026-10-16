@@ -222,10 +222,10 @@ for_window [app_id="zen" title="Picture-in-Picture"] floating enable, sticky ena
 for_window [app_id="Thunar" title="(?i).*(confirm|delete|rename).*"] floating enable
 
 ### Colors (Slate / Charcoal Dark Theme)
-client.focused          #484e5c #24262b #ffffff #484e5c #484e5c
-client.focused_inactive #303339 #202226 #888888 #303339 #303339
-client.unfocused        #1c1e22 #202226 #666a72 #1c1e22 #1c1e22
-client.urgent           #e06c75 #24262b #ffffff #e06c75 #e06c75
+client.focused          #ffffff #000000 #ffffff #ffffff #000000
+client.focused_inactive #1e1e22 #0a0a0c #888888 #1e1e22 #0a0a0c
+client.unfocused        #141417 #000000 #666a72 #141417 #000000
+client.urgent           #e06c75 #000000 #ffffff #e06c75 #000000
 
 ### Window Resize
 mode "resize" {

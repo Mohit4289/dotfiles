@@ -2,14 +2,14 @@
    Aesthetic Floating Minimalist Bar (Graphite Rice)
    =================================================== */
 
-@define-color bg-glass       rgba(34, 36, 42, 0.88);
-@define-color bg-hover       rgba(52, 56, 64, 0.95);
-@define-color fg-main        #d8dbe0;
-@define-color fg-muted       #828690;
-@define-color border-glass   rgba(255, 255, 255, 0.09);
-@define-color border-hover   rgba(255, 255, 255, 0.22);
+@define-color bg-glass       rgba(10, 10, 12, 0.90);
+@define-color bg-hover       rgba(28, 28, 34, 0.96);
+@define-color fg-main        #e6e8ec;
+@define-color fg-muted       #727680;
+@define-color border-glass   rgba(255, 255, 255, 0.10);
+@define-color border-hover   rgba(255, 255, 255, 0.35);
 @define-color accent-white   #ffffff;
-@define-color accent-dark    #18191c;
+@define-color accent-dark    #000000;
 @define-color accent-red     #e06c75;
 @define-color accent-green   #98c379;
 

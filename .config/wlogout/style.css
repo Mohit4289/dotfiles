@@ -1,5 +1,5 @@
 /* ===================================================
-   wlogout - Slate Minimalist Dark Theme
+   wlogout - Pure Black Minimalist Theme
    =================================================== */
 
 * {
@@ -9,13 +9,13 @@
 }
 
 window {
-  /* Rich dark atmospheric backdrop */
-  background: radial-gradient(circle at center, rgba(18, 20, 24, 0.88) 0%, rgba(10, 11, 14, 0.96) 100%);
+  /* Cinematic Pure Black Backdrop */
+  background: radial-gradient(circle at center, rgba(8, 8, 10, 0.94) 0%, rgba(0, 0, 0, 0.98) 100%);
 }
 
 button {
-  color: #c5c8d0;
-  background-color: rgba(30, 33, 40, 0.85);
+  color: #e6e8ec;
+  background-color: rgba(12, 12, 15, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   background-repeat: no-repeat;
@@ -26,36 +26,36 @@ button {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base Hover State: Elevated Slate Card with Subtle White Glow */
+/* Base Hover State: Elevated Obsidian Card with White Glow */
 button:focus,
 button:active,
 button:hover {
-  background-color: rgba(45, 49, 58, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background-color: rgba(24, 24, 30, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.40);
   color: #ffffff;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.15);
   outline: none;
 }
 
 /* Specific Action Accents */
 #reboot:hover,
 #reboot:focus {
-  background-color: rgba(45, 49, 58, 0.95);
+  background-color: rgba(24, 24, 30, 0.98);
   border: 1px solid #e5c07b;
   color: #e5c07b;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(229, 192, 123, 0.25);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 192, 123, 0.3);
 }
 
 #shutdown:hover,
 #shutdown:focus {
-  background-color: rgba(45, 49, 58, 0.95);
+  background-color: rgba(24, 24, 30, 0.98);
   border: 1px solid #e06c75;
   color: #e06c75;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(224, 108, 117, 0.3);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8), 0 0 24px rgba(224, 108, 117, 0.35);
 }
 
 /* Normal Icons */
