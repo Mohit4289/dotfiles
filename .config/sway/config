@@ -240,10 +240,10 @@ for_window [app_id="zen" title="Picture-in-Picture"] floating enable, sticky ena
 for_window [app_id=".*"] opacity 0.88
 for_window [class=".*"] opacity 0.88
 
-# Tailored app opacity
-for_window [app_id="vesktop"] opacity 0.94
-for_window [app_id="(?i)thunar"] opacity 0.94
-for_window [class="(?i)thunar"] opacity 0.94
+# Tailored app opacity (Deep Frosted Glass)
+for_window [app_id="vesktop"] opacity 0.75
+for_window [app_id="(?i)thunar"] opacity 0.75
+for_window [class="(?i)thunar"] opacity 0.75
 
 # Protected Solid (100% Opacity)
 for_window [app_id="antigravity-ide"] opacity 1.0
